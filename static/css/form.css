@@ -1,0 +1,363 @@
+/* Form Container */
+.form-container {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+/* Form Progress */
+.form-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--light-bg);
+}
+
+.progress-step {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    color: var(--text-light);
+    position: relative;
+}
+
+.progress-step.active {
+    color: var(--accent-color);
+}
+
+.progress-step.active::after {
+    content: '';
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Form Sections */
+.form-section {
+    display: none;
+    margin-bottom: 30px;
+}
+
+.form-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translationY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-section h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Skip Section */
+.skip-section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.skip-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.skip-section input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Dynamic Lists */
+.experience-list,
+.education-list,
+.skills-list,
+.certifications-list {
+    margin-bottom: 20px;
+}
+
+.experience-item,
+.education-item,
+.skill-item,
+.certification-item {
+    background-color: #fafafa;
+    padding: 20px;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 6px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.skill-item {
+    padding: 12px;
+    border-left: none;
+}
+
+.skill-item input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Buttons */
+.btn-add,
+.btn-remove {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-add {
+    background-color: var(--success-color);
+    color: var(--white);
+    margin-top: 10px;
+}
+
+.btn-add:hover {
+    background-color: #229954;
+}
+
+.btn-remove {
+    background-color: #e74c3c;
+    color: var(--white);
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    margin-top: 10px;
+}
+
+.btn-remove:hover {
+    background-color: #c0392b;
+}
+
+/* Color Preset Selector */
+.color-preset-selector {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.color-swatch {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.color-option input:checked + .color-swatch {
+    border-color: #333;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #333;
+    transform: scale(1.1);
+}
+
+.color-swatch:hover {
+    transform: scale(1.08);
+}
+
+.color-label {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Date Selector */
+.date-selector {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.month-select,
+.year-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--white);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.month-select {
+    cursor: pointer;
+}
+
+.year-input {
+    cursor: text;
+}
+
+.month-select:focus,
+.year-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.month-select:active,
+.year-input:active {
+    border-color: var(--accent-color);
+}
+
+/* Remove number input spinners */
+.year-input::-webkit-outer-spin-button,
+.year-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.year-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Form Navigation */
+.form-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--light-bg);
+}
+
+.btn-nav {
+    flex: 1;
+    padding: 14px 24px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-nav:disabled {
+    background-color: var(--text-light);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-progress {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .progress-step {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .progress-step.active::after {
+        bottom: -12px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .form-nav {
+        flex-direction: column;
+    }
+
+    .btn-nav {
+        width: 100%;
+    }
+}
