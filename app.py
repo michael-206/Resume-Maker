@@ -7,7 +7,7 @@ from utils.document_generator import PDFGenerator, WordGenerator, HTMLGenerator
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
-TEMPLATES = {
+"""TEMPLATES = {
     'modern': {
         'name': 'Modern',
         'description': 'Clean, contemporary design with bold typography',
@@ -27,6 +27,14 @@ TEMPLATES = {
         'name': 'Creative',
         'description': 'Colorful and modern design',
         'color': '#e74c3c'
+    }
+}"""
+
+TEMPLATES = {
+    'modern': {
+        'name': 'Modern',
+        'description': 'Clean, contemporary design with bold typography',
+        'color': '#2c3e50'
     }
 }
 
